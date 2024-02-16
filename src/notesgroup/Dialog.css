@@ -1,0 +1,49 @@
+/* Dialog.css */
+.dialog {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 400px;
+  background-color: #fff;
+}
+
+.dialog-title {
+  text-align: start;
+  margin-top: 0;
+  margin-left: 0;
+}
+.float-container {
+  display: flex;
+}
+.p-group-name {
+  width: 40%;
+  float: left;
+  margin-bottom: 30px;
+}
+.dialog-input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.color-list {
+  width: 100%;
+  display: flex;
+  margin-top: 16px;
+}
+
+.color-item {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.dialog-button {
+  float: right;
+  background-color: blue;
+  color: #fff;
+}
