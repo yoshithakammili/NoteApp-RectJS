@@ -4,6 +4,7 @@ import "./NotesGroupDesgin.css";
 import Dialog from "./GroupNameDialog.jsx";
 import NoteService from "./NoteService";
 import myImage from "./add.png";
+import ReactDOM from "react-dom";
 
 const Contacts = ({ onSelectContact }) => {
   // const contacts = [
@@ -110,16 +111,18 @@ const Contacts = ({ onSelectContact }) => {
           ))}
         </div>
       </div>
-      <div className="button-container">
-        <img className="sticky-button" onClick={handleStickyButtonClick} src={myImage} />
-      </div>
-      {isDialogOpen && (
-        <Dialog
-          title="Create New Group"
-          onSave={handleSaveContent}
-          onClose={handleCloseDialog}
-        />
-      )}
+      
+        <img className="sticky-button" onClick={handleStickyButtonClick} src={myImage}  width={60} height={60}/>
+      
+      {isDialogOpen && 
+          ReactDOM.createPortal(
+            <Dialog
+              title="Create New Group"
+              onSave={handleSaveContent}
+              onClose={handleCloseDialog}
+            />,
+            document.body
+          )}
     </div>
   );
 };

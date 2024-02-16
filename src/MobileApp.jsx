@@ -10,14 +10,20 @@ const MobileApp = () => {
   const handleContactSelect = (contact) => {
     setSelectedContact(contact);
   };
+  const handleBackToContacts = () => {
+    setSelectedContact(null);
+  };
 
   return (
     <div className="mobile-app-container">
       {!selectedContact ? (
         <Contacts onSelectContact={handleContactSelect} />
-      ) : (
-        <Chat contact={selectedContact} />
-      )}
+        ) : (
+          <Chat
+            contact={selectedContact}
+            onBackToContacts={handleBackToContacts}
+          />
+        )}
     </div>
   );
 };

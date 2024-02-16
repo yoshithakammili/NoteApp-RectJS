@@ -40,7 +40,7 @@
 }
 
 .input-container {
-  position: relative;
+  position: fixed;
   height: 100px; /* Adjust height as needed */
   background-color: #001F8B;
   color: white;
@@ -93,4 +93,9 @@
 }
 .circle-name {
   margin-left: 20px;
+}
+@media (min-width: 768px) {
+  .back-button-mobile {
+    display: none;
+  }
 }
