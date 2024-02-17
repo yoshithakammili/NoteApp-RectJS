@@ -86,11 +86,12 @@ const Dialog = ({ title, onSave, onClose }) => {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="white"
-                    strokeWidth="2"
+                    strokeWidth="4"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     className="feather feather-check"
                     style={{
+                      marginLeft:"5px",
                       width: "20px",
                       height: "20px",
                       marginTop: "5px",

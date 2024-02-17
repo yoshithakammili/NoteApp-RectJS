@@ -81,10 +81,11 @@ const Contacts = ({ onSelectContact }) => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                marginBottom: 25,
+              
                 cursor: "pointer",
+                padding:12,
                 backgroundColor: index === selectedNoteIndex ? "#2F2F2F2B" : "transparent",
-                borderRadius:index === selectedNoteIndex ? 10 : 0,
+                borderRadius:index === selectedNoteIndex ? 12 : 0,
               }}
               onClick={() => handleContactSelect(note.noteName, index)}
             >
@@ -98,6 +99,7 @@ const Contacts = ({ onSelectContact }) => {
                   justifyContent: "center",
                   alignItems: "center",
                   marginRight: 10,
+                  marginLeft:20
                 }}
               >
                 <span style={{ color: "#fff", fontWeight: 700 }}>

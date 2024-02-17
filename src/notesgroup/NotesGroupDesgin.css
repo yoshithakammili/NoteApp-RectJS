@@ -1,5 +1,4 @@
 .app-container {
-  margin-left: 40px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -43,7 +42,7 @@
   border-radius: 5px;
   float: right;
   cursor: pointer;
-  margin-left: 50%;
+  margin-left: 60%;
   z-index: 1000; /* Ensure it's above other content */
 }
 
