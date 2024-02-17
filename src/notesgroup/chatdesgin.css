@@ -30,7 +30,7 @@
 .chatHeader {
   height: 100px;
   color: white;
-  background-color: #001F8B;
+  background-color: blue;
   position: sticky;
   display: flex;
   align-items: center;
@@ -40,9 +40,9 @@
 }
 
 .input-container {
-  position: fixed;
+  position: relative;
   height: 100px; /* Adjust height as needed */
-  background-color: #001F8B;
+  background-color: blue;
   color: white;
   padding: 10px;
   position: sticky;

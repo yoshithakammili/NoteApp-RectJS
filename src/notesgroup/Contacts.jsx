@@ -111,9 +111,9 @@ const Contacts = ({ onSelectContact }) => {
           ))}
         </div>
       </div>
-      
+    
         <img className="sticky-button" onClick={handleStickyButtonClick} src={myImage}  width={60} height={60}/>
-      
+        
       {isDialogOpen && 
           ReactDOM.createPortal(
             <Dialog

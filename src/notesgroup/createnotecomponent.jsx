@@ -103,7 +103,7 @@ function CreateNoteComponent({ contact, onBackToContacts}) {
             onChange={(e) => setInputValue(e.target.value)}
           ></textarea>
           <div className="input-image" onClick={() => handleSend(inputvalue)}>
-            {inputvalue !== "" ? (
+            {inputvalue != "" ? (
               <img src={send} alt="Send" width={25} height={25} />
             ) : (
               <img src={senddisable} alt="Send" width={25} height={25} />

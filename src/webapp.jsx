@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Contacts from "./notesgroup/Contacts";
 import Chat from "./notesgroup/Chat";
+import EmptyNoteComponent from "./notesgroup/emptynotecomponent";
+
 import "./Webapp.css"; // Import CSS file for styling
 
 const WebApp = () => {
@@ -19,7 +21,8 @@ const WebApp = () => {
         <Contacts onSelectContact={handleContactSelect} />
       </div>
       <div className="chat-container">
-        <Chat contact={selectedContact} />
+      {selectedContact === null ? <EmptyNoteComponent /> : <Chat contact={selectedContact} />}
+
       </div>
     </div>
   );

@@ -27,6 +27,8 @@
 
 
 .sticky-button {
+  position: fixed; 
+
   position: sticky; 
   color: #fff;
   border: none;

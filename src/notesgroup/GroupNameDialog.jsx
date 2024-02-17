@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import "./Dialog.css";
 
 const Dialog = ({ title, onSave, onClose }) => {
@@ -14,13 +14,28 @@ const Dialog = ({ title, onSave, onClose }) => {
   const [noteName, setNoteName] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [toastMessage, setToastMessage] = useState("");
+  const dialogRef = useRef(null);
 
   useEffect(() => {
     // Check screen width and set dialog width accordingly
     const screenWidth = window.innerWidth;
     const dialogWidth = screenWidth > 768 ? "400px" : "90%"; // Adjust breakpoint and width as needed
     document.documentElement.style.setProperty("--dialog-width", dialogWidth);
-  }, []);
+
+
+    const handleClickOutside = (event) => {
+      if (dialogRef.current && !dialogRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+
+
+  }, [onClose]);
   const handleColorClick = (color) => {
     // Optionally handle color selection
     setSelectedColor(color);
@@ -42,7 +57,7 @@ const Dialog = ({ title, onSave, onClose }) => {
 
   return (
     <div className="dialog-overlay">
-      <div className="dialog">
+      <div ref={dialogRef} className="dialog">
         <h2 className="dialog-title">{title}</h2>
 
         <div className="float-container">
@@ -97,5 +112,15 @@ const Dialog = ({ title, onSave, onClose }) => {
     </div>
   );
 };
+
+document.body.addEventListener('click', function(event) {
+  const dialog = document.querySelector('./Dialog'); 
+  
+  // Check if the clicked element is not inside the dialog
+  if (!dialog.contains(event.target)) {
+    // If clicked outside the dialog, close it or perform any desired action
+    dialog.style.display = 'none'; // Example: hide the dialog
+  }
+});
 
 export default Dialog;
