@@ -33,6 +33,7 @@ const Chat = ({ contact,onBackToContacts }) => {
   const handleSend = (note) => {
     console.log("selected note =" + note);
     // NoteService.addNoteToGroup(contact, note);
+    if(inputvalue!=null && inputvalue!=""){
     const updatedNotes = [
       ...getAllNotes,
       { note: inputvalue, timestamp: new Date().getTime() },
@@ -44,6 +45,7 @@ const Chat = ({ contact,onBackToContacts }) => {
 
     // Clear the input value after sending
     setInputValue("");
+  }
   };
   return (
     <div className="chat-container-outer">

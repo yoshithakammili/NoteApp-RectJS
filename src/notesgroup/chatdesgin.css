@@ -30,7 +30,7 @@
 .chatHeader {
   height: 100px;
   color: white;
-  background-color: blue;
+  background-color: #001F8B;
   position: sticky;
   display: flex;
   align-items: center;
@@ -42,7 +42,7 @@
 .input-container {
   position: relative;
   height: 100px; /* Adjust height as needed */
-  background-color: blue;
+  background-color:#001F8B;;
   color: white;
   padding: 10px;
   position: sticky;
@@ -94,8 +94,16 @@
 .circle-name {
   margin-left: 20px;
 }
+.back-button{
+  margin-left: 10px;
+}
 @media (min-width: 768px) {
   .back-button-mobile {
     display: none;
+  }
+}
+@media (max-width: 767px) {
+  .chat-container {
+    width: 100%; /* Full width on mobile */
   }
 }

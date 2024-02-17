@@ -83,8 +83,8 @@ const Contacts = ({ onSelectContact }) => {
                 alignItems: "center",
                 marginBottom: 25,
                 cursor: "pointer",
-                backgroundColor:
-                  index === selectedNoteIndex ? "grey" : "transparent",
+                backgroundColor: index === selectedNoteIndex ? "#2F2F2F2B" : "transparent",
+                borderRadius:index === selectedNoteIndex ? 10 : 0,
               }}
               onClick={() => handleContactSelect(note.noteName, index)}
             >

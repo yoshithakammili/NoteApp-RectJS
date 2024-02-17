@@ -1,9 +1,12 @@
 .app-container {
   margin-left: 40px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
-
   background-color: #fff;
   padding: 10px;
   color: #000;
@@ -15,10 +18,14 @@
   z-index: 1000;
 }
 
+
 .list-container {
-  
+  align-self: flex-start; /* Start from the top of the container */
+  align-items: flex-start; /* Align list items to the start */
   margin-top: 5%;
   margin-bottom: 10%;
+  flex-grow: 1; /* Allow the list to grow and fill the remaining space */
+  overflow-y: auto;
 }
 .content {
   flex-grow: 1;
@@ -27,16 +34,27 @@
 
 
 .sticky-button {
-  position: fixed; 
-
-  position: sticky; 
+  position: sticky; /* Stick to the bottom of the viewport */
+  bottom: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
-  cursor: pointer;
-  bottom: 0;
-  right: 0;
   float: right;
+  cursor: pointer;
+  margin-left: 50%;
+  z-index: 1000; /* Ensure it's above other content */
 }
 
+@media (max-width: 767px) {
+  .app-container {
+    width: 100%; /* Full width on mobile */
+    padding-bottom: 70px; /* Adjust for sticky button height */
+  }
+
+  .header {
+    width: calc(100% - 80px); /* Adjust for margin-left */
+    margin-left: 40px;
+  }
+}
